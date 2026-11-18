@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ApexPure Peptides | Reference-Grade Synthetic Research Peptides (99%+ HPLC)</title>
+  <meta name="description" content="Reference-grade synthetic research peptides characterized to 99%+ purity by HPLC and LC-MS. Every batch ships with an independently verified Certificate of Analysis (COA)." />
+  <link rel="canonical" href="https://yourdomain.com/" />
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#f0fdfa',
+              100: '#ccfbf1',
+              500: '#14b8a6',
+              600: '#0d9488',
+              700: '#0f766e',
+              900: '#134e4a',
+            },
+            slate: {
+              850: '#172033',
+              950: '#0a0f1c',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- JSON-LD Structured Data for SEO & GEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "ApexPure Peptides",
+    "description": "Reference-grade synthetic research peptides verified by third-party HPLC and LC-MS testing.",
+    "url": "https://yourdomain.com"
+  }
+  </script>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans antialiased selection:bg-brand-500 selection:text-white">
+
+  <!-- Top Compliance & Trust Bar -->
+  <div class="bg-slate-950 text-slate-300 text-xs py-2 px-4 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div class="flex items-center gap-4">
+        <span class="flex items-center gap-1.5 text-emerald-400 font-medium">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+          99%+ HPLC Verified Purity
+        </span>
+        <span class="hidden md:inline text-slate-600">|</span>
+        <span class="hidden md:inline">Third-Party LC-MS Mass-Spec Confirmed</span>
+        <span class="hidden lg:inline text-slate-600">|</span>
+        <span class="hidden lg:inline">COA Traceable by Lot Number</span>
+      </div>
+      <div class="font-mono text-[11px] uppercase tracking-wider text-amber-400/90">
+        For In-Vitro Laboratory Research Use Only
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-2.5 group">
+        <div class="w-9 h-9 rounded-lg bg-slate-900 flex items-center justify-center text-brand-500 font-mono font-bold text-lg group-hover:bg-brand-600 group-hover:text-white transition">
+          AP
+        </div>
+        <div>
+          <span class="font-bold text-lg tracking-tight text-slate-900 block leading-none">APEXPURE</span>
+          <span class="font-mono text-[10px] tracking-widest text-slate-500 uppercase">Peptide Sciences</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-600">
+        <a href="#catalog" class="hover:text-slate-900 transition">Catalog</a>
+        <a href="#verify-lot" class="hover:text-slate-900 transition flex items-center gap-1">
+          Verify a Batch
+          <span class="px-1.5 py-0.5 text-[10px] font-mono bg-emerald-50 text-emerald-700 border border-emerald-200 rounded">COA</span>
+        </a>
+        <a href="#coa-library" class="hover:text-slate-900 transition">COA Library</a>
+        <a href="#bulk-b2b" class="hover:text-slate-900 transition">Bulk & CDMO</a>
+        <a href="#faq" class="hover:text-slate-900 transition">Analytical FAQ</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-3">
+        <button onclick="openBulkModal()" class="hidden sm:inline-flex items-center gap-1.5 text-xs font-medium px-3 py-2 rounded-lg border border-slate-300 text-slate-700 hover:bg-slate-50 transition">
+          <i data-lucide="file-spreadsheet" class="w-3.5 h-3.5 text-brand-600"></i>
+          Bulk Quote
+        </button>
+        <button onclick="toggleCart()" class="relative inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white text-sm font-medium px-4 py-2 rounded-lg transition shadow-sm">
+          <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+          <span class="hidden sm:inline">Order</span>
+          <span id="cart-badge" class="bg-brand-500 text-slate-950 font-mono font-bold text-xs px-1.5 py-0.5 rounded-full">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section + Live Batch Verifier -->
+  <section class="relative bg-white border-b border-slate-200 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Value Proposition -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-xs font-mono text-slate-700">
+            <span class="w-2 h-2 rounded-full bg-brand-600"></span>
+            THIRD-PARTY VERIFIED · INDEPENDENT LAB ARCHIVE
+          </div>
+          
+          <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-slate-950 leading-[1.12]">
+            Reference-grade synthetic peptides, <span class="text-brand-600">verified lot by lot.</span>
+          </h1>
+          
+          <p class="text-base sm:text-lg text-slate-600 max-w-2xl leading-relaxed">
+            Every production batch is independently characterized to ≥99.0% purity by reversed-phase HPLC and confirmed by LC-MS mass spectrometry prior to release. Full analytical PDFs published up front.
+          </p>
+
+          <!-- Key Metrics Strip -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-2 border-t border-slate-100">
+            <div>
+              <div class="text-2xl font-bold font-mono text-slate-900">99.71%</div>
+              <div class="text-xs text-slate-500 mt-0.5">Avg. Documented Purity</div>
+            </div>
+            <div>
+              <div class="text-2xl font-bold font-mono text-slate-900">100%</div>
+              <div class="text-xs text-slate-500 mt-0.5">Lot-Traceable COAs</div>
+            </div>
+            <div>
+              <div class="text-2xl font-bold font-mono text-slate-900">&lt;0.5 EU</div>
+              <div class="text-xs text-slate-500 mt-0.5">Endotoxin Threshold</div>
+            </div>
+            <div>
+              <div class="text-2xl font-bold font-mono text-slate-900">24–48h</div>
+              <div class="text-xs text-slate-500 mt-0.5">Cold-Chain Dispatch</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Interactive Batch Verification Widget -->
+        <div id="verify-lot" class="lg:col-span-5">
+          <div class="bg-slate-900 text-white rounded-2xl p-6 sm:p-7 shadow-xl border border-slate-800">
+            <div class="flex items-center justify-between mb-4">
+              <span class="font-mono text-xs uppercase tracking-wider text-brand-400 flex items-center gap-1.5">
+                <i data-lucide="shield-check" class="w-4 h-4"></i>
+                Batch Verification Tool
+              </span>
+              <span class="text-[11px] font-mono text-slate-400">DATABASE v4.2</span>
+            </div>
+            
+            <h2 class="text-xl font-semibold mb-2">Verify any vial against its lab report</h2>
+            <p class="text-xs text-slate-400 mb-5 leading-relaxed">
+              Enter the alphanumeric lot code printed on your lyophilized vial label to retrieve HPLC purity, LC-MS confirmation, and net peptide content.
+            </p>
+
+            <form onsubmit="handleLotVerify(event)" class="space-y-3">
+              <div class="relative">
+                <input 
+                  type="text" 
+                  id="lot-input" 
+                  placeholder="Enter Lot # (e.g. BPC-261019-10)" 
+                  class="w-full bg-slate-950 border border-slate-700 focus:border-brand-500 rounded-lg px-4 py-3 text-sm font-mono text-white placeholder-slate-500 focus:outline-none"
+                  required
+                />
+              </div>
+              <button type="submit" class="w-full bg-brand-600 hover:bg-brand-500 text-white font-medium text-sm py-3 rounded-lg transition flex items-center justify-center gap-2">
+                <i data-lucide="search" class="w-4 h-4"></i>
+                Verify Batch Certificate
+              </button>
+            </form>
+
+            <!-- Quick Sample Lot Chips -->
+            <div class="mt-4 pt-4 border-t border-slate-800">
+              <span class="text-[11px] text-slate-400 block mb-2">Try sample batch numbers:</span>
+              <div class="flex flex-wrap gap-1.5">
+                <button type="button" onclick="quickVerify('BPC-261019-10')" class="font-mono text-[11px] px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 transition">BPC-261019-10</button>
+                <button type="button" onclick="quickVerify('GLP2-TZ-101926')" class="font-mono text-[11px] px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 transition">GLP2-TZ-101926</button>
+                <button type="button" onclick="quickVerify('GHK-260930-50')" class="font-mono text-[11px] px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 transition">GHK-260930-50</button>
+              </div>
+            </div>
+
+            <!-- Instant Verification Result Box -->
+            <div id="verify-result" class="hidden mt-4 p-4 rounded-xl bg-slate-950 border border-emerald-500/40 text-xs space-y-2">
+              <!-- Populated dynamically via JS -->
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Catalog & Storefront Section -->
+  <section id="catalog" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+      <div>
+        <span class="font-mono text-xs uppercase tracking-wider text-brand-700 font-semibold">Lyophilized Reference Materials</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-950 mt-1">Research Peptide Catalog</h2>
+      </div>
+
+      <!-- Category Filter Tabs & Search -->
+      <div class="flex flex-wrap items-center gap-2">
+        <div class="relative">
+          <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2"></i>
+          <input 
+            type="text" 
+            id="catalog-search" 
+            oninput="filterCatalog()"
+            placeholder="Filter compound or CAS..." 
+            class="pl-9 pr-3 py-1.5 text-sm bg-white border border-slate-300 rounded-lg focus:outline-none focus:border-brand-600"
+          />
+        </div>
+        <div class="flex bg-slate-200/70 p-1 rounded-lg text-xs font-medium" id="category-tabs">
+          <button onclick="setCategory('all')" class="cat-btn active px-3 py-1.5 rounded-md bg-white text-slate-900 shadow-sm" data-cat="all">All</button>
+          <button onclick="setCategory('metabolic')" class="cat-btn px-3 py-1.5 rounded-md text-slate-600 hover:text-slate-900" data-cat="metabolic">Metabolic / GLP</button>
+          <button onclick="setCategory('repair')" class="cat-btn px-3 py-1.5 rounded-md text-slate-600 hover:text-slate-900" data-cat="repair">Tissue Repair</button>
+          <button onclick="setCategory('cosmetic')" class="cat-btn px-3 py-1.5 rounded-md text-slate-600 hover:text-slate-900" data-cat="cosmetic">Cosmetic / Longevity</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Grid (Rendered Dynamically from JS Data) -->
+    <div id="product-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Cards injected by JS -->
+    </div>
+  </section>
+
+  <!-- COA Library Section -->
+  <section id="coa-library" class="bg-white border-y border-slate-200 py-14">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+        <div>
+          <div class="inline-flex items-center gap-2 text-xs font-mono text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded mb-2">
+            INDEPENDENT LAB ARCHIVE · HPLC & LC-MS
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-bold text-slate-950">Certificate of Analysis Library</h2>
+          <p class="text-sm text-slate-600 mt-1">Every batch is analyzed by independent US analytical laboratories before release. Click any record to inspect full testing parameters.</p>
+        </div>
+        <div class="text-xs font-mono text-slate-500">
+          Showing latest verified lots
+        </div>
+      </div>
+
+      <!-- COA Archive Table -->
+      <div class="overflow-x-auto border border-slate-200 rounded-xl shadow-sm">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="bg-slate-50 border-b border-slate-200 text-[11px] font-mono uppercase text-slate-500">
+              <th class="py-3.5 px-4">Compound & Strength</th>
+              <th class="py-3.5 px-4">Lot Number</th>
+              <th class="py-3.5 px-4">HPLC Purity</th>
+              <th class="py-3.5 px-4">Net Content</th>
+              <th class="py-3.5 px-4">Testing Lab</th>
+              <th class="py-3.5 px-4">Test Date</th>
+              <th class="py-3.5 px-4 text-right">Certificate</th>
+            </tr>
+          </thead>
+          <tbody id="coa-table-body" class="divide-y divide-slate-200 text-sm">
+            <!-- Rows injected by JS -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- B2B Bulk & Custom Synthesis Banner -->
+  <section id="bulk-b2b" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+    <div class="bg-slate-900 rounded-2xl p-8 sm:p-12 text-white grid lg:grid-cols-12 gap-8 items-center">
+      <div class="lg:col-span-8 space-y-4">
+        <span class="font-mono text-xs uppercase tracking-wider text-brand-400">Institutional & Wholesale Desk</span>
+        <h2 class="text-2xl sm:text-3xl font-bold">Bulk Lyophilized Vials & Custom Synthesis (CDMO)</h2>
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl">
+          Need gram-level lyophilized raw material, custom sequence synthesis, or white-label institutional batch runs (100+ vials)? Our B2B desk provides direct factory pricing, full batch COA documentation, and temperature-controlled global logistics.
+        </p>
+        <div class="flex flex-wrap gap-3 pt-2">
+          <button onclick="openBulkModal()" class="bg-brand-600 hover:bg-brand-500 text-white font-medium text-sm px-5 py-2.5 rounded-lg transition">
+            Request B2B Price Sheet
+          </button>
+          <a href="https://wa.me/15550192834?text=Hello%20ApexPure%20Team,%20I%20would%20like%20to%20request%20a%20B2B%20bulk%20peptide%20catalog%20and%20COA%20list." target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white font-medium text-sm px-5 py-2.5 rounded-lg transition inline-flex items-center gap-2">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            WhatsApp B2B Desk
+          </a>
+        </div>
+      </div>
+      <div class="lg:col-span-4 bg-slate-950/70 border border-slate-800 rounded-xl p-5 space-y-3 font-mono text-xs">
+        <div class="flex justify-between py-1.5 border-b border-slate-800">
+          <span class="text-slate-400">MOQ (Wholesale Vials)</span>
+          <span class="text-white font-semibold">50 Vials / SKU</span>
+        </div>
+        <div class="flex justify-between py-1.5 border-b border-slate-800">
+          <span class="text-slate-400">Raw Powder Purity</span>
+          <span class="text-emerald-400 font-semibold">≥ 99.0% (HPLC)</span>
+        </div>
+        <div class="flex justify-between py-1.5 border-b border-slate-800">
+          <span class="text-slate-400">Custom Modifications</span>
+          <span class="text-white">Acetylation / Amidation</span>
+        </div>
+        <div class="flex justify-between py-1.5">
+          <span class="text-slate-400">Dispatch Lead Time</span>
+          <span class="text-white">24–48 Hours (FedEx/DHL)</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+    <h2 class="text-2xl font-bold text-slate-950 mb-6">Analytical & Compliance FAQ</h2>
+    <div class="space-y-3">
+      <details class="group bg-white border border-slate-200 rounded-xl p-5" open>
+        <summary class="font-semibold text-slate-900 cursor-pointer list-none flex justify-between items-center">
+          What analytical methods verify your peptide purity and identity?
+          <i data-lucide="chevron-down" class="w-4 h-4 text-slate-500 group-open:rotate-180 transition"></i>
+        </summary>
+        <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+          Every production lot is tested by independent third-party laboratories using Reversed-Phase High-Performance Liquid Chromatography (RP-HPLC) at 214 nm / 220 nm to quantify target peak purity (≥99.0%), alongside Liquid Chromatography-Mass Spectrometry (LC-MS) to confirm exact molecular weight.
+        </p>
+      </details>
+      <details class="group bg-white border border-slate-200 rounded-xl p-5">
+        <summary class="font-semibold text-slate-900 cursor-pointer list-none flex justify-between items-center">
+          How should lyophilized peptides be stored upon receipt?
+          <i data-lucide="chevron-down" class="w-4 h-4 text-slate-500 group-open:rotate-180 transition"></i>
+        </summary>
+        <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+          Lyophilized powders remain stable at ambient temperatures during expedited transit. Upon receipt, store sealed vials desiccated at −20°C or colder (−80°C for long-term archival beyond 6 months) and protect from UV light.
+        </p>
+      </details>
+      <details class="group bg-white border border-slate-200 rounded-xl p-5">
+        <summary class="font-semibold text-slate-900 cursor-pointer list-none flex justify-between items-center">
+          What are these reference materials intended for?
+          <i data-lucide="chevron-down" class="w-4 h-4 text-slate-500 group-open:rotate-180 transition"></i>
+        </summary>
+        <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+          All materials are supplied strictly for legitimate in-vitro laboratory research, assay development, and analytical reference validation by qualified professionals. Not for human or veterinary consumption, clinical, or therapeutic application.
+        </p>
+      </details>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-950 text-slate-400 border-t border-slate-800 py-12 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 leading-relaxed">
+        <strong class="text-white uppercase font-mono">Research Use Only Disclaimer:</strong> All products listed on this website are strictly intended for laboratory research and analytical R&D use only. They are not drugs, foods, dietary supplements, or cosmetics, and are not intended for human or animal consumption, ingestion, injection, or any in-vivo or clinical use of any kind.
+      </div>
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 pt-4 border-t border-slate-800/80">
+        <div>© 2026 ApexPure Peptide Sciences. All rights reserved.</div>
+        <div class="flex gap-6">
+          <a href="#catalog" class="hover:text-white">Catalog</a>
+          <a href="#coa-library" class="hover:text-white">COA Library</a>
+          <a href="llms.txt" class="hover:text-white font-mono">llms.txt</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Slide-over Cart / Order Drawer -->
+  <div id="cart-drawer" class="fixed inset-0 z-50 hidden">
+    <div onclick="toggleCart()" class="absolute inset-0 bg-slate-950/60 backdrop-blur-xs"></div>
+    <div class="absolute right-0 top-0 bottom-0 w-full max-w-md bg-white shadow-2xl flex flex-col">
+      <div class="p-5 border-b border-slate-200 flex items-center justify-between">
+        <h3 class="font-bold text-lg text-slate-900">Research Order Requisition</h3>
+        <button onclick="toggleCart()" class="p-1.5 rounded-lg hover:bg-slate-100 text-slate-500">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      
+      <div id="cart-items" class="flex-1 overflow-y-auto p-5 space-y-4">
+        <!-- Cart items rendered dynamically -->
+      </div>
+
+      <div class="p-5 border-t border-slate-200 bg-slate-50 space-y-4">
+        <div class="flex justify-between items-center text-sm">
+          <span class="text-slate-600">Subtotal (Lyophilized Vials)</span>
+          <span id="cart-total" class="font-mono font-bold text-lg text-slate-950">$0.00</span>
+        </div>
+        <button onclick="submitOrderInquiry()" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-medium py-3 rounded-lg transition flex items-center justify-center gap-2">
+          <span>Submit Order / Request Invoice</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </button>
+        <p class="text-[11px] text-center text-slate-500">
+          Orders are confirmed with batch COA verification prior to dispatch.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- COA Inspection Modal -->
+  <div id="coa-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4">
+    <div onclick="closeCoaModal()" class="absolute inset-0 bg-slate-950/70 backdrop-blur-xs"></div>
+    <div class="relative bg-white rounded-2xl max-w-xl w-full p-6 sm:p-8 shadow-2xl border border-slate-200 z-10">
+      <div class="flex justify-between items-start border-b border-slate-200 pb-4 mb-5">
+        <div>
+          <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200 font-mono text-xs font-semibold">
+            SAMPLE PASS · VERIFIED
+          </span>
+          <h3 id="modal-coa-title" class="text-xl font-bold text-slate-950 mt-2">Certificate of Analysis</h3>
+        </div>
+        <button onclick="closeCoaModal()" class="p-1.5 rounded-lg hover:bg-slate-100 text-slate-500">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      
+      <div id="modal-coa-body" class="space-y-4 text-sm">
+        <!-- Populated dynamically -->
+      </div>
+
+      <div class="mt-6 pt-4 border-t border-slate-200 flex justify-end gap-3">
+        <button onclick="closeCoaModal()" class="px-4 py-2 rounded-lg border border-slate-300 text-slate-700 text-sm font-medium hover:bg-slate-50">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bulk / B2B Quote Modal -->
+  <div id="bulk-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4">
+    <div onclick="closeBulkModal()" class="absolute inset-0 bg-slate-950/70 backdrop-blur-xs"></div>
+    <div class="relative bg-white rounded-2xl max-w-lg w-full p-6 sm:p-8 shadow-2xl z-10">
+      <div class="flex justify-between items-center mb-4">
+        <h3 class="text-xl font-bold text-slate-950">B2B Wholesale & Bulk Inquiry</h3>
+        <button onclick="closeBulkModal()" class="p-1.5 rounded-lg hover:bg-slate-100 text-slate-500">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <form onsubmit="handleBulkSubmit(event)" class="space-y-4 text-sm">
+        <div>
+          <label class="block font-medium text-slate-700 mb-1">Institution / Company Name</label>
+          <input type="text" required placeholder="e.g. BioTech Analytical Labs" class="w-full border border-slate-300 rounded-lg px-3.5 py-2.5 focus:outline-none focus:border-brand-600" />
+        </div>
+        <div>
+          <label class="block font-medium text-slate-700 mb-1">Work Email or WhatsApp</label>
+          <input type="text" required placeholder="researcher@lab.org / +1..." class="w-full border border-slate-300 rounded-lg px-3.5 py-2.5 focus:outline-none focus:border-brand-600" />
+        </div>
+        <div>
+          <label class="block font-medium text-slate-700 mb-1">Target Compounds & Quantities</label>
+          <textarea rows="3" required placeholder="e.g. BPC-157 10mg x 100 vials, GHK-Cu 50mg x 50 vials" class="w-full border border-slate-300 rounded-lg px-3.5 py-2.5 focus:outline-none focus:border-brand-600"></textarea>
+        </div>
+        <button type="submit" class="w-full bg-brand-600 hover:bg-brand-500 text-white font-medium py-3 rounded-lg transition">
+          Send Quote Request
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Application Data & Interactive Logic -->
+  <script>
+    // 1. Product & COA Dataset (Easily extendable to 60+ SKUs)
+    const PEPTIDES = [
+      {
+        id: 'bpc-157',
+        name: 'BPC-157',
+        subtitle: 'Body Protection Compound-15',
+        category: 'repair',
+        cas: '137525-51-0',
+        mw: '1419.53 g/mol',
+        purity: '99.42%',
+        lot: 'BPC-261019-10',
+        lab: 'Freedom Diagnostics',
+        testDate: 'Oct 19, 2026',
+        netContent: '10.42 mg',
+        variants: [
+          { size: '5 mg', price: 32 },
+          { size: '10 mg', price: 48 }
+        ]
+      },
+      {
+        id: 'glp2-tz',
+        name: 'GLP2-TZ (Tirzepatide)',
+        subtitle: 'Dual GIP/GLP-1 Receptor Agonist',
+        category: 'metabolic',
+        cas: '2023788-19-2',
+        mw: '4813.45 g/mol',
+        purity: '99.90%',
+        lot: 'GLP2-TZ-101926',
+        lab: 'Accurate Test Labs',
+        testDate: 'Oct 19, 2026',
+        netContent: '10.68 mg',
+        variants: [
+          { size: '10 mg', price: 85 },
+          { size: '15 mg', price: 115 },
+          { size: '30 mg', price: 195 }
+        ]
+      },
+      {
+        id: 'ghk-cu',
+        name: 'GHK-Cu (Copper Peptide)',
+        subtitle: 'Glycyl-L-Histidyl-L-Lysine Copper',
+        category: 'cosmetic',
+        cas: '49557-75-7',
+        mw: '403.92 g/mol',
+        purity: '99.97%',
+        lot: 'GHK-260930-50',
+        lab: 'Accurate Test Labs',
+        testDate: 'Sep 30, 2026',
+        netContent: '55.17 mg',
+        variants: [
+          { size: '50 mg', price: 45 },
+          { size: '100 mg', price: 78 }
+        ]
+      },
+      {
+        id: 'tb-500',
+        name: 'TB-500 (Thymosin Beta-4)',
+        subtitle: 'Synthetic Actin-Sequestering Fragment',
+        category: 'repair',
+        cas: '77591-33-4',
+        mw: '4963.44 g/mol',
+        purity: '99.31%',
+        lot: 'TB5-261005-10',
+        lab: 'Freedom Diagnostics',
+        testDate: 'Oct 05, 2026',
+        netContent: '10.18 mg',
+        variants: [
+          { size: '5 mg', price: 38 },
+          { size: '10 mg', price: 64 }
+        ]
+      },
+      {
+        id: 'retatrutide',
+        name: 'GLP3-RT (Retatrutide)',
+        subtitle: 'Triple Agonist Research Peptide',
+        category: 'metabolic',
+        cas: '2381089-83-2',
+        mw: '4731.33 g/mol',
+        purity: '99.77%',
+        lot: 'RT3-261102-10',
+        lab: 'ILS Laboratories',
+        testDate: 'Nov 02, 2026',
+        netContent: '10.35 mg',
+        variants: [
+          { size: '10 mg', price: 110 },
+          { size: '20 mg', price: 190 }
+        ]
+      },
+      {
+        id: 'epitalon',
+        name: 'Epitalon (Epithalon)',
+        subtitle: 'Synthetic Tetrapeptide Ala-Glu-Asp-Gly',
+        category: 'cosmetic',
+        cas: '307297-39-8',
+        mw: '390.35 g/mol',
+        purity: '99.86%',
+        lot: 'EPI-261019-50',
+        lab: 'Freedom Diagnostics',
+        testDate: 'Oct 19, 2026',
+        netContent: '53.18 mg',
+        variants: [
+          { size: '10 mg', price: 34 },
+          { size: '50 mg', price: 92 }
+        ]
+      }
+    ];
+
+    let currentCategory = 'all';
+    let selectedVariants = {};
+    let cart = [];
+
+    // Initialize default variant selection
+    PEPTIDES.forEach(p => { selectedVariants[p.id] = 0; });
+
+    function renderCatalog() {
+      const searchVal = document.getElementById('catalog-search').value.toLowerCase();
+      const grid = document.getElementById('product-grid');
+      
+      const filtered = PEPTIDES.filter(p => {
+        const matchesCat = currentCategory === 'all' || p.category === currentCategory;
+        const matchesSearch = p.name.toLowerCase().includes(searchVal) || 
+                              p.cas.toLowerCase().includes(searchVal) || 
+                              p.subtitle.toLowerCase().includes(searchVal);
+        return matchesCat && matchesSearch;
+      });
+
+      grid.innerHTML = filtered.map(p => {
+        const vIdx = selectedVariants[p.id] || 0;
+        const activeVar = p.variants[vIdx];
+
+        return `
+          <div class="bg-white border border-slate-200 rounded-2xl p-6 flex flex-col justify-between hover:border-slate-300 hover:shadow-md transition">
+            <div>
+              <!-- Top Badges -->
+              <div class="flex items-center justify-between gap-2 mb-3">
+                <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200 font-semibold">
+                  ${p.purity} HPLC
+                </span>
+                <span class="font-mono text-[11px] text-slate-500">CAS ${p.cas}</span>
+              </div>
+
+              <!-- Title -->
+              <h3 class="text-lg font-bold text-slate-950">${p.name}</h3>
+              <p class="text-xs text-slate-500 mt-0.5">${p.subtitle}</p>
+
+              <!-- Analytical Metadata Box -->
+              <div class="mt-4 p-3 rounded-xl bg-slate-50 border border-slate-100 space-y-1.5 font-mono text-[11px]">
+                <div class="flex justify-between">
+                  <span class="text-slate-500">Active Lot:</span>
+                  <span class="text-slate-800 font-medium">${p.lot}</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-slate-500">Mol. Weight:</span>
+                  <span class="text-slate-800">${p.mw}</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-slate-500">Verified Lab:</span>
+                  <span class="text-slate-800">${p.lab}</span>
+                </div>
+              </div>
+
+              <!-- Variant Selector -->
+              <div class="mt-4">
+                <label class="text-[11px] font-mono uppercase text-slate-400 block mb-1.5">Vial Strength</label>
+                <div class="flex gap-2">
+                  ${p.variants.map((v, idx) => `
+                    <button 
+                      onclick="selectVariant('${p.id}', ${idx})" 
+                      class="flex-1 py-1.5 px-2 rounded-lg text-xs font-mono border transition ${idx === vIdx ? 'border-slate-900 bg-slate-900 text-white font-semibold' : 'border-slate-200 text-slate-700 hover:border-slate-300'}"
+                    >
+                      ${v.size}
+                    </button>
+                  `).join('')}
+                </div>
+              </div>
+            </div>
+
+            <!-- Bottom Price & Actions -->
+            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between gap-2">
+              <div>
+                <span class="text-xs text-slate-400 block">Per Vial</span>
+                <span class="text-xl font-bold font-mono text-slate-950">$${activeVar.price}</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <button onclick="openCoaModal('${p.id}')" class="px-3 py-2 rounded-lg border border-slate-200 hover:bg-slate-50 text-xs font-mono font-medium text-slate-700 transition" title="Inspect Certificate of Analysis">
+                  COA
+                </button>
+                <button onclick="addToCart('${p.id}')" class="px-4 py-2 rounded-lg bg-brand-600 hover:bg-brand-500 text-white text-xs font-medium transition flex items-center gap-1.5">
+                  <i data-lucide="plus" class="w-3.5 h-3.5"></i>
+                  Add
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      lucide.createIcons();
+    }
+
+    function renderCoaTable() {
+      const tbody = document.getElementById('coa-table-body');
+      tbody.innerHTML = PEPTIDES.map(p => `
+        <tr class="hover:bg-slate-50/80 transition">
+          <td class="py-3.5 px-4 font-semibold text-slate-900">${p.name}</td>
+          <td class="py-3.5 px-4 font-mono text-xs text-slate-600">${p.lot}</td>
+          <td class="py-3.5 px-4">
+            <span class="font-mono text-xs font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">${p.purity}</span>
+          </td>
+          <td class="py-3.5 px-4 font-mono text-xs text-slate-700">${p.netContent}</td>
+          <td class="py-3.5 px-4 text-xs text-slate-600">${p.lab}</td>
+          <td class="py-3.5 px-4 font-mono text-xs text-slate-500">${p.testDate}</td>
+          <td class="py-3.5 px-4 text-right">
+            <button onclick="openCoaModal('${p.id}')" class="font-mono text-xs text-brand-700 hover:text-brand-900 font-semibold underline underline-offset-4">
+              View COA →
+            </button>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function setCategory(cat) {
+      currentCategory = cat;
+      document.querySelectorAll('.cat-btn').forEach(btn => {
+        if (btn.dataset.cat === cat) {
+          btn.classList.add('bg-white', 'text-slate-900', 'shadow-sm');
+          btn.classList.remove('text-slate-600');
+        } else {
+          btn.classList.remove('bg-white', 'text-slate-900', 'shadow-sm');
+          btn.classList.add('text-slate-600');
+        }
+      });
+      renderCatalog();
+    }
+
+    function filterCatalog() {
+      renderCatalog();
+    }
+
+    function selectVariant(productId, idx) {
+      selectedVariants[productId] = idx;
+      renderCatalog();
+    }
+
+    // Batch Verification Logic
+    function quickVerify(lotCode) {
+      document.getElementById('lot-input').value = lotCode;
+      verifyLotCode(lotCode);
+    }
+
+    function handleLotVerify(e) {
+      e.preventDefault();
+      const val = document.getElementById('lot-input').value.trim();
+      verifyLotCode(val);
+    }
+
+    function verifyLotCode(code) {
+      const box = document.getElementById('verify-result');
+      const found = PEPTIDES.find(p => p.lot.toLowerCase() === code.toLowerCase());
+      box.classList.remove('hidden');
+
+      if (found) {
+        box.className = 'mt-4 p-4 rounded-xl bg-slate-950 border border-emerald-500/50 text-xs space-y-2';
+        box.innerHTML = `
+          <div class="flex items-center justify-between text-emerald-400 font-mono font-semibold">
+            <span>✓ AUTHENTICATED LOT</span>
+            <span>${found.purity} PURE</span>
+          </div>
+          <div class="text-slate-300">Compound: <strong class="text-white">${found.name}</strong> (${found.netContent} net)</div>
+          <div class="text-slate-400">Lab: ${found.lab} · Tested: ${found.testDate}</div>
+          <button onclick="openCoaModal('${found.id}')" class="mt-1 inline-block text-brand-400 hover:text-brand-300 font-mono underline">
+            Open Full Analytical Report →
+          </button>
+        `;
+      } else {
+        box.className = 'mt-4 p-4 rounded-xl bg-slate-950 border border-amber-500/50 text-xs space-y-1';
+        box.innerHTML = `
+          <div class="text-amber-400 font-mono font-semibold">LOT NOT FOUND IN PUBLIC ARCHIVE</div>
+          <p class="text-slate-400">Verify the code printed on your vial label or contact our analytical desk with a photo of the vial.</p>
+        `;
+      }
+    }
+
+    // COA Modal Logic
+    function openCoaModal(productId) {
+      const p = PEPTIDES.find(item => item.id === productId);
+      if (!p) return;
+
+      document.getElementById('modal-coa-title').textContent = `${p.name} — Analytical Certificate`;
+      document.getElementById('modal-coa-body').innerHTML = `
+        <div class="grid grid-cols-2 gap-3 p-4 rounded-xl bg-slate-50 border border-slate-200 font-mono text-xs">
+          <div><span class="text-slate-400 block">Lot Number</span><strong class="text-slate-900">${p.lot}</strong></div>
+          <div><span class="text-slate-400 block">CAS Registry</span><strong class="text-slate-900">${p.cas}</strong></div>
+          <div><span class="text-slate-400 block">HPLC Purity (214nm)</span><strong class="text-emerald-700">${p.purity}</strong></div>
+          <div><span class="text-slate-400 block">LC-MS Identity</span><strong class="text-slate-900">Confirmed (${p.mw})</strong></div>
+          <div><span class="text-slate-400 block">Net Peptide Content</span><strong class="text-slate-900">${p.netContent}</strong></div>
+          <div><span class="text-slate-400 block">Endotoxin (LAL)</span><strong class="text-slate-900">&lt; 0.05 EU/mg</strong></div>
+          <div><span class="text-slate-400 block">Testing Facility</span><strong class="text-slate-900">${p.lab}</strong></div>
+          <div><span class="text-slate-400 block">Analysis Date</span><strong class="text-slate-900">${p.testDate}</strong></div>
+        </div>
+        <div class="p-3.5 rounded-xl border border-slate-200 bg-white">
+          <div class="text-xs font-mono uppercase text-slate-400 mb-2">Simulated RP-HPLC Chromatogram Trace</div>
+          <svg viewBox="0 0 400 70" class="w-full h-16 stroke-brand-600 fill-none" stroke-width="2">
+            <path d="M 0 62 L 180 62 Q 195 62 200 10 Q 205 62 220 62 L 400 62" />
+          </svg>
+          <div class="flex justify-between text-[11px] font-mono text-slate-400 mt-1">
+            <span>0.0 min</span>
+            <span class="text-emerald-700 font-semibold">Target Peak Area: ${p.purity}</span>
+            <span>15.0 min</span>
+          </div>
+        </div>
+      `;
+      document.getElementById('coa-modal').classList.remove('hidden');
+    }
+
+    function closeCoaModal() {
+      document.getElementById('coa-modal').classList.add('hidden');
+    }
+
+    // Cart Logic
+    function addToCart(productId) {
+      const p = PEPTIDES.find(item => item.id === productId);
+      const variant = p.variants[selectedVariants[productId] || 0];
+      const key = `${p.id}-${variant.size}`;
+      
+      const existing = cart.find(c => c.key === key);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({ key, name: p.name, size: variant.size, price: variant.price, lot: p.lot, qty: 1 });
+      }
+      updateCartUI();
+      toggleCart(true);
+    }
+
+    function updateQty(key, delta) {
+      const item = cart.find(c => c.key === key);
+      if (!item) return;
+      item.qty += delta;
+      if (item.qty <= 0) {
+        cart = cart.filter(c => c.key !== key);
+      }
+      updateCartUI();
+    }
+
+    function updateCartUI() {
+      const badge = document.getElementById('cart-badge');
+      const itemsContainer = document.getElementById('cart-items');
+      const totalEl = document.getElementById('cart-total');
+
+      const totalCount = cart.reduce((sum, i) => sum + i.qty, 0);
+      const totalPrice = cart.reduce((sum, i) => sum + i.price * i.qty, 0);
+
+      badge.textContent = totalCount;
+      totalEl.textContent = `$${totalPrice.toFixed(2)}`;
+
+      if (cart.length === 0) {
+        itemsContainer.innerHTML = `<div class="text-center text-slate-400 text-sm py-12">Your research requisition list is empty.</div>`;
+        return;
+      }
+
+      itemsContainer.innerHTML = cart.map(item => `
+        <div class="p-3.5 rounded-xl border border-slate-200 flex items-center justify-between gap-3">
+          <div>
+            <div class="font-semibold text-sm text-slate-900">${item.name} (${item.size})</div>
+            <div class="font-mono text-[11px] text-slate-500">Lot: ${item.lot} · $${item.price}/vial</div>
+          </div>
+          <div class="flex items-center gap-2">
+            <button onclick="updateQty('${item.key}', -1)" class="w-7 h-7 rounded border border-slate-200 flex items-center justify-center hover:bg-slate-100">-</button>
+            <span class="font-mono text-xs w-5 text-center">${item.qty}</span>
+            <button onclick="updateQty('${item.key}', 1)" class="w-7 h-7 rounded border border-slate-200 flex items-center justify-center hover:bg-slate-100">+</button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function toggleCart(forceOpen = null) {
+      const drawer = document.getElementById('cart-drawer');
+      if (forceOpen === true) {
+        drawer.classList.remove('hidden');
+      } else {
+        drawer.classList.toggle('hidden');
+      }
+    }
+
+    function submitOrderInquiry() {
+      if (cart.length === 0) return;
+      const summary = cart.map(i => `${i.name} (${i.size}) x${i.qty}`).join('%0A');
+      window.open(`https://wa.me/15550192834?text=Hello,%20I%20would%20like%20to%20place%20a%20research%20order:%0A${summary}`, '_blank');
+    }
+
+    function openBulkModal() { document.getElementById('bulk-modal').classList.remove('hidden'); }
+    function closeBulkModal() { document.getElementById('bulk-modal').classList.add('hidden'); }
+    function handleBulkSubmit(e) {
+      e.preventDefault();
+      alert('Your B2B wholesale inquiry has been logged. Our institutional desk will reply with batch pricing and COAs within 4 hours.');
+      closeBulkModal();
+    }
+
+    // Boot
+    renderCatalog();
+    renderCoaTable();
+    updateCartUI();
+    lucide.createIcons();
+  </script>
+</body>
+</html>
